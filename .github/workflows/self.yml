@@ -2,7 +2,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # This cron expression schedules the workflow to run at midnight every day
+    - cron: '34 3 * * *'  # This cron expression schedules the workflow to run at midnight every day
 
 jobs:
   build:
