@@ -20,8 +20,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'Zeeshan-Gulzar'
+          git config --global user.email 'zeeshan10a@gmail.com'
           git add .
           git commit -m "Automated commit on $(date)"
           git push https://$GITHUB_ACTOR:${{ secrets.GH_TOKEN }}@github.com/Zeeshan-Gulzar/self.git
