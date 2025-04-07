@@ -1,0 +1,26 @@
+name: Daily Commit
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # Runs at 10 PM PST (6 AM UTC)
+  workflow_dispatch:
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Make a change
+        run: |
+          echo "🌞 $(date)" >> daily.txt
+
+      - name: Commit and push
+        run: |
+          git config --global user.name 'Zeeshan-Gulzar'
+          git config --global user.email 'zeeshan10a@gmail.com'
+          git add .
+          git commit -m "chore: daily update [$(date)]"
+          git push
